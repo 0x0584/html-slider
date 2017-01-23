@@ -1,13 +1,103 @@
+<!doctype html>
 <html>
   <head>
-<title>photo-gallery</title>
-</head>
-<body>
-<h1>photo-gallery</h1>
+    <script language="javascript">
+     function next(msg) {alert.write(msg);}
+    </script>
 
+    <style>
+     body {
+       background: #150F40;
+       margin: 0;
+     }
 
-<address>
-<a href="mailto:Anas Rchid@ARWIN"></a>
-</address>
-</body>
+     /* the dot (.) mention the class-name */
+     .thumbnails img {
+       height: 80px;
+       border: 4px solid #555;
+       padding: 1px;
+       margin: 15px 10px 10px 0px;
+     }
+
+     .thumbnails img:hover {
+       /* border: 4px solid #00CCFF; */
+       box-shadow: 0px -7px 0px rgb(0, 255,145);
+       cursor: pointer;
+     }
+
+     .preview img {
+       border: 4px solid #444;
+       padding: 1px;
+       width: 600px; height: 350px;
+       margin : 25px 0 0 25px;
+     }
+
+     .nav-btn:last-child {
+       float: left;
+     }
+
+     .nav-btn:first-child {
+       float: right;
+     }
+     .nav-btn input {
+       margin: 15px 15px 15px 15px;
+       border: 0px;
+       background: #899879;
+       
+     }
+    </style>
+    <title>photo-gallery</title>
+  </head>
+  
+  <!-- The body starts here.. -->
+  <body>
+    <header>
+      <h1 align=center>Photo Gallery</h1> <hr>
+    </header>
+    <div class="gallery"  align="center">
+      <div>
+	<div class="nav-btn">
+	  <input type="button" value=">" onClick="next('test')"/>
+	</div>
+
+	<div class="nav-btn">
+	  <input type="button" value="<" onClick="next('test')"/>
+	</div>
+      </div>
+      <div class="thumbnails">
+	<!-- Since the name attribute is not used anymore, the alternative way
+	     is to get elemnt by thier id-attribute, using getElementById() -->
+	<img onmouseover="getElementById('preview').src=getElementById('1').src" id="1"
+	     src="images/1.jpg" alt="" />
+	<img onmouseover="getElementById('preview').src=getElementById('2').src" id="2"
+	     src="images/2.jpg" alt="" />
+	<img onmouseover="getElementById('preview').src=getElementById('3').src" id="3"
+	     src="images/3.jpg" alt="" />
+	<img onmouseover="getElementById('preview').src=getElementById('4').src" id="4"
+	     src="images/4.jpg" alt="" />
+	<img onmouseover="getElementById('preview').src=getElementById('5').src" id="5"
+	     src="images/5.jpg" alt="" />
+	<img onmouseover="getElementById('preview').src=getElementById('6').src" id="6"
+	     src="images/6.jpg" alt="" />
+	<img onmouseover="getElementById('preview').src=getElementById('7').src" id="7"
+	     src="images/7.jpg" alt="" />
+      </div>
+
+      <div class="preview" align="center" onClick="alert">
+	<img id="preview" src="images/1.jpg" alt="" />
+      </div>
+    </div>
+
+    <input type="checkbox" name="check" value="checkbox" checked>
+    <i>This is a test!</i> <br />
+  </body>
+  <!-- The body ends here -->
+
+  <footer>
+    <address>
+      <hr />
+      <a href="mailto:localhost@arfed">Anas Rchid</a>
+      <br />
+    </address>
+  </footer>
 </html>
